@@ -18,14 +18,9 @@ io.on("connection", (socket) => {
         socketUser: socket.username,
     });
 
-    socket.emit("test", "server test++++++++");
-
-    socket.on('message', (data, callback) => {
-        console.log(data);
-        callback('server got it.........');
-
-        socket.emit('message-client', data + ' ++ server ')
-        socket.broadcast.emit('message-client', data + ' ++ server ')
+    socket.on('message', (data) => {
+        socket.emit('message-client', data);
+        socket.broadcast.emit('message-client', data);
     })
 });
 
