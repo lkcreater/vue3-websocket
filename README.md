@@ -44,3 +44,10 @@ npm run build
 ```sh
 npm run test:unit
 ```
+
+## Server Setup
+
+```sh
+cd server
+node index.js
+```
